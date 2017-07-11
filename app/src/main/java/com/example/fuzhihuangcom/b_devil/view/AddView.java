@@ -12,6 +12,7 @@ import static android.R.attr.width;
 
 /**
  * Created by fuzhihuang on 2017/7/3.
+ * Test-test
  */
 
 public class AddView extends View {
