@@ -84,6 +84,7 @@ public class AddView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        // drawLine的参数（起点X坐标，起点Y坐标，终点X坐标，终点Y坐标，画笔）
         //水平的横线
         canvas.drawLine(HstartX, HstartY, HendX, HendY, paint);
         //垂直的横线
