@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         list.add("加减号按钮");
         list.add("自定义圆");
+        list.add("下拉刷新自定义横幅");
     }
 
     private void init() {
@@ -42,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 if (position == 0) {
                     Intent intent = new Intent(MainActivity.this, AddAndMinusActivity.class);
                     startActivity(intent);
-                } else if(position == 1) {
+                } else if (position == 1) {
                     Intent intent = new Intent(MainActivity.this, DrawCircleActivity.class);
+                    startActivity(intent);
+                } else if (position == 2) {
+                    Intent intent = new Intent(MainActivity.this, PullDownActivity.class);
                     startActivity(intent);
                 }
             }
