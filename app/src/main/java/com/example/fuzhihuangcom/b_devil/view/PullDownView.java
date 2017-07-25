@@ -14,6 +14,7 @@ import com.example.fuzhihuangcom.b_devil.R;
 
 /**
  * Created by fuzhihuang on 2017/7/25.
+ * http://www.jianshu.com/p/f69873371763
  * 下拉提问的自定义view
  */
 
