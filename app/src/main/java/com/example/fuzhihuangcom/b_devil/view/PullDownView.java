@@ -46,7 +46,9 @@ public class PullDownView extends View {
     float mTop;
     float mRight;
     float mBottom;
-
+    // 文本的X轴的开始位置，文本的Y轴结束位置
+    float mTextStartX;
+    float mTextEndY = -10;
 
     public PullDownView(Context context) {
         this(context, null);
@@ -106,7 +108,10 @@ public class PullDownView extends View {
         canvas.drawRect(rect, mPaint2);
         // 画文本
         mPaint3.setColor(Color.parseColor("#fdfdfd"));
-        canvas.drawText("开始写字了！",50, 50, mPaint3);
+        mPaint3.setTextSize(dip2px(mContext, 11));
+        mTextStartX = (float) (dip2px(mContext, (int) 28.5));
+        canvas.drawText("开", mTextStartX, mTextEndY, mPaint3);
+//        dip2px(mContext, 11)
     }
 
     @Override
