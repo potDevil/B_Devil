@@ -16,7 +16,6 @@ import com.example.fuzhihuangcom.b_devil.R;
 
 /**
  * Created by fuzhihuang on 2017/7/25.
- * http://www.jianshu.com/p/f69873371763
  * 下拉提问的自定义view
  */
 
@@ -165,6 +164,7 @@ public class PullDownView extends View {
                     } else {                                                                        // false 指名提问变快速提问，并且颜色变tink，down, 并且flag为true
                         mBitmap = mBitmap2;
                     }
+                    mPullDownListener.switchView(flag);
                     flag = !flag;
                     restore();
                     invalidate();
@@ -172,10 +172,8 @@ public class PullDownView extends View {
 //                    Toast.makeText(mContext, "还没拉到最底下", Toast.LENGTH_SHORT).show();
                     if (flag) {                                                                     // false 快速提问还是快速提问题，颜色变浅，down, flag不变
                         mBitmap = mBitmap2;
-                        mPullDownListener.switchView(flag);
                     } else {                                                                        // false 指名提问还是指名提问题，颜色变浅，down, flag不变
                         mBitmap = mBitmap1;
-                        mPullDownListener.switchView(flag);
                     }
                     restore();
                     invalidate();
