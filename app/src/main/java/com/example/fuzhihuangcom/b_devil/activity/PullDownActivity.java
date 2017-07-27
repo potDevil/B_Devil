@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.fuzhihuangcom.b_devil.R;
 import com.example.fuzhihuangcom.b_devil.view.PullDownView;
@@ -15,6 +16,7 @@ import com.example.fuzhihuangcom.b_devil.view.PullDownView;
 public class PullDownActivity extends Activity implements View.OnTouchListener {
 
     private PullDownView mPdv;
+    private TextView mTv;
 //    private int bitmapWidth;
 //    private int bitmapHeight;
 
@@ -23,7 +25,28 @@ public class PullDownActivity extends Activity implements View.OnTouchListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pull_down2);
         mPdv = (PullDownView) findViewById(R.id.pdv);
+        mTv = (TextView) findViewById(R.id.tv);
 //        mPdv.setOnTouchListener(this);
+        mPdv.setPullDownListener(new PullDownView.PullDownListener() {
+            @Override
+            public void pullDownBottom() {
+                mTv.setBackgroundResource(R.drawable.skip_rect);
+            }
+
+            @Override
+            public void pullNoDown() {
+                mTv.setBackgroundResource(R.drawable.pull_down_rect);
+            }
+
+            public void switchView(boolean flag){
+                // 切换页面
+                if(flag) {
+
+                } else {
+
+                }
+            }
+        });
     }
 
     @Override
