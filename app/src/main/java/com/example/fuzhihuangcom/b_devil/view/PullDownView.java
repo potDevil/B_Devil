@@ -5,9 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -27,8 +25,6 @@ public class PullDownView extends View {
     private Context mContext;
     // 绘制图片
     private Paint mPaint1;
-    // 绘制矩形
-    private Paint mPaint2;
     // 图片Y轴坐标
     public float y;
     // Y坐标的开始位置
@@ -36,7 +32,7 @@ public class PullDownView extends View {
     // Y坐标移动到点的位置
     private float mMoveY;
     // true为快速提问，false为指名提问
-    private boolean flag = false;
+    private boolean mFlag;
     // 一张初始图，6张不同的图片
     private Bitmap mBitmap;
     private Bitmap mBitmap1;
@@ -47,13 +43,6 @@ public class PullDownView extends View {
     private Bitmap mBitmap6;
     // 下拉的最大位置
     private int downMax;
-    // 矩形的4个位置
-    private float mLeft;
-    private float mTop;
-    private float mRight;
-    private float mBottom;
-    // 此View镶嵌在整个布局中取整个布局的背景颜色
-    private int mColor;
 
     public PullDownView(Context context) {
         this(context, null);
@@ -66,21 +55,19 @@ public class PullDownView extends View {
     public PullDownView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PullDownView);
-        mColor = ta.getColor(R.styleable.PullDownView_back_color, Color.parseColor("#ffffff"));
+        mFlag = ta.getBoolean(R.styleable.PullDownView_view_status, false);
         ta.recycle();
         init(context);
     }
 
     private void init(Context context) {
-
-        if (flag) {
+        if (mFlag) {
             mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.fast_question_down_tint);
         } else {
             mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.point_question_down_tint);
         }
         mContext = context;
         mPaint1 = new Paint(Paint.ANTI_ALIAS_FLAG);       // 抗锯齿
-        mPaint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
         mBitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.point_question_down_tint);
         mBitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.fast_question_down_tint);
         mBitmap3 = BitmapFactory.decodeResource(getResources(), R.drawable.point_question_down_dark);
@@ -89,10 +76,6 @@ public class PullDownView extends View {
         mBitmap6 = BitmapFactory.decodeResource(getResources(), R.drawable.point_question_up_dark);
 
         downMax = dip2px(mContext, (int) 60.5);
-
-        mLeft = dip2px(context, (float) 15.5);
-        mRight = dip2px(context, 52);
-        mBottom = dip2px(context, 100);
     }
 
     @Override
@@ -115,10 +98,6 @@ public class PullDownView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        // 绘制矩形
-        mPaint2.setColor(mColor);
-        Rect rect = new Rect((int) mLeft, (int) mTop, (int) mRight, (int) mBottom);
-        canvas.drawRect(rect, mPaint2);
         // 绘制图片
         canvas.drawBitmap(mBitmap, 0, y, mPaint1);
         if (mBitmap != null && mBitmap.isRecycled()) {
@@ -136,27 +115,24 @@ public class PullDownView extends View {
             case MotionEvent.ACTION_MOVE:
                 mMoveY = event.getY();
                 y = mMoveY - mStartY;
-                if (y > 0 && y < downMax) {         // 还未拉到最底下
+                if (y > 0 && y < downMax) {                                                         // 还未拉到最底下
                     // 设置为下拉切换
                     mPullDownListener.pullNoDown();
-                    if (flag) {                     // true 当前界面为快速提问，图变为快速提问深色down
+                    if (mFlag) {                                                                    // true 当前界面为快速提问，图变为快速提问深色down
                         mBitmap = mBitmap4;
-                    } else {                        // false 当前界面为指名提问,图变为指名提问深色down
+                    } else {                                                                        // false 当前界面为指名提问,图变为指名提问深色down
                         mBitmap = mBitmap3;
                     }
-                    mTop = y + dip2px(mContext, 1);
                     invalidate();
-                } else if (y >= downMax) {          // 拉到最底下
+                } else if (y >= downMax) {                                                          // 拉到最底下
                     // 设置为松开跳转
                     mPullDownListener.pullDownBottom();
-                    if (flag) {                     // true  当前界面为快速提问，图变为快速提问深色up
+                    if (mFlag) {                                                                    // true  当前界面为快速提问，图变为快速提问深色up
                         mBitmap = mBitmap5;
-                    } else {                        // false 当前界面为指名提问,图变为指名提问深色up
+                    } else {                                                                        // false 当前界面为指名提问,图变为指名提问深色up
                         mBitmap = mBitmap6;
                     }
                     y = downMax;
-                    mTop = y + dip2px(mContext, 1);
-
                     invalidate();
                 }
                 break;
@@ -164,38 +140,28 @@ public class PullDownView extends View {
             case MotionEvent.ACTION_UP:
                 if (event.getY() - mStartY >= downMax) {                                            // 拉到底下弹回
 //                    Toast.makeText(mContext, "拉到最底下了", Toast.LENGTH_SHORT).show();
-                    if (flag) {                                                                     // false 快速提问变指名提问，并且颜色变tink，down, 并且flag为true
+                    if (mFlag) {                                                                    // false 快速提问变指名提问，并且颜色变tink，down, 并且flag为true
                         mBitmap = mBitmap1;
                     } else {                                                                        // false 指名提问变快速提问，并且颜色变tink，down, 并且flag为true
                         mBitmap = mBitmap2;
                     }
-                    mPullDownListener.switchView(flag);
-                    flag = !flag;
-                    restore();
+                    mPullDownListener.switchView(mFlag);
+                    mFlag = !mFlag;
+                    y = 0;
                     invalidate();
                 } else if (event.getY() - mStartY >= 0 && event.getY() - mStartY < downMax) {       // 未拉到最底下弹回
 //                    Toast.makeText(mContext, "还没拉到最底下", Toast.LENGTH_SHORT).show();
-                    if (flag) {                                                                     // false 快速提问还是快速提问题，颜色变浅，down, flag不变
+                    if (mFlag) {                                                                    // false 快速提问还是快速提问题，颜色变浅，down, flag不变
                         mBitmap = mBitmap2;
                     } else {                                                                        // false 指名提问还是指名提问题，颜色变浅，down, flag不变
                         mBitmap = mBitmap1;
                     }
-                    restore();
+                    y = 0;
                     invalidate();
                 }
                 break;
         }
         return true;
-    }
-
-    /**
-     * 矩形、图形回到初始位置
-     */
-    private void restore() {
-        mBottom = 0;
-        y = 0;
-        mTop = y;
-        mBottom = dip2px(mContext, 100);
     }
 
     /**
@@ -207,10 +173,21 @@ public class PullDownView extends View {
     }
 
     public interface PullDownListener {
+        /**
+         * 未拉到最下方，设置背景图片为下拉切换
+         */
         void pullNoDown();
 
+        /**
+         * 已拉到最下方，设置背景图片为松开跳转
+         */
         void pullDownBottom();
 
+        /**
+         * 切换界面操作
+         *
+         * @param flag true为快速提问，false为指名提问
+         */
         void switchView(boolean flag);
     }
 
