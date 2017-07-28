@@ -1,6 +1,7 @@
 package com.example.fuzhihuangcom.b_devil.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -44,14 +45,15 @@ public class PullDownView extends View {
     private Bitmap mBitmap4;
     private Bitmap mBitmap5;
     private Bitmap mBitmap6;
-
     // 下拉的最大位置
     private int downMax;
     // 矩形的4个位置
-    float mLeft;
-    float mTop;
-    float mRight;
-    float mBottom;
+    private float mLeft;
+    private float mTop;
+    private float mRight;
+    private float mBottom;
+    // 此View镶嵌在整个布局中取整个布局的背景颜色
+    private int mColor;
 
     public PullDownView(Context context) {
         this(context, null);
@@ -63,6 +65,9 @@ public class PullDownView extends View {
 
     public PullDownView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PullDownView);
+        mColor = ta.getColor(R.styleable.PullDownView_back_color, Color.parseColor("#ffffff"));
+        ta.recycle();
         init(context);
     }
 
@@ -99,11 +104,11 @@ public class PullDownView extends View {
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
 
         if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(dip2px(mContext, 66), dip2px(mContext, 200));
+            setMeasuredDimension(dip2px(mContext, 66), dip2px(mContext, 140));
         } else if (widthMeasureSpec == MeasureSpec.AT_MOST) {
             setMeasuredDimension(dip2px(mContext, 66), heightSpecSize);
         } else if (heightSpecMode == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(widthSpecSize, dip2px(mContext, 200));
+            setMeasuredDimension(widthSpecSize, dip2px(mContext, 140));
         }
     }
 
@@ -111,7 +116,7 @@ public class PullDownView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         // 绘制矩形
-        mPaint2.setColor(Color.parseColor("#000000"));
+        mPaint2.setColor(mColor);
         Rect rect = new Rect((int) mLeft, (int) mTop, (int) mRight, (int) mBottom);
         canvas.drawRect(rect, mPaint2);
         // 绘制图片

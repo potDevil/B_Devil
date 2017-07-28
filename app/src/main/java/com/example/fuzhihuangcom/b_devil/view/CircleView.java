@@ -13,6 +13,8 @@ import com.example.fuzhihuangcom.b_devil.R;
 
 /**
  * Created by fuzhihuang on 2017/7/5.
+ * 定义圆（静止）
+ * 理解onMeasure onDraw Demo
  */
 
 public class CircleView extends View {
@@ -47,9 +49,9 @@ public class CircleView extends View {
          *  4、使用自定义属性，必须在布局文件中添加schemas声明：
          *  xmlns:app="http://schemas.android.com/apk/res-auto"
          */
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
-        mColor = a.getColor(R.styleable.CircleView_circle_color, Color.RED);
-        a.recycle();
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
+        mColor = ta.getColor(R.styleable.CircleView_circle_color, Color.RED);
+        ta.recycle();
         init();
     }
 

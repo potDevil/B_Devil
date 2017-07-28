@@ -23,7 +23,7 @@ public class PullDownActivity extends Activity implements View.OnTouchListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pull_down2);
+        setContentView(R.layout.activity_pull_down);
         mPdv = (PullDownView) findViewById(R.id.pdv);
         mTv = (TextView) findViewById(R.id.tv);
 //        mPdv.setOnTouchListener(this);
