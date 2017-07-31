@@ -7,6 +7,7 @@ import com.example.fuzhihuangcom.b_devil.R;
 
 /**
  * Created by fuzhihuang on 2017/7/5.
+ * 自定义固定圆
  */
 
 public class DrawCircleActivity extends AppCompatActivity {

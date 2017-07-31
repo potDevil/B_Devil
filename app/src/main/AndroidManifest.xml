@@ -20,6 +20,7 @@
         <activity android:name=".activity.AddAndMinusActivity"/>
         <activity android:name=".activity.DrawCircleActivity"/>
         <activity android:name=".activity.PullDownActivity"/>
+        <activity android:name=".activity.RippleActivity"/>
     </application>
 
 </manifest>

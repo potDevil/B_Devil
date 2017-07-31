@@ -11,6 +11,7 @@ import com.example.fuzhihuangcom.b_devil.view.PullDownView;
 
 /**
  * Created by fuzhihuang on 2017/7/25.
+ * 下拉横幅刷新控件
  */
 
 public class PullDownActivity extends Activity implements View.OnTouchListener {

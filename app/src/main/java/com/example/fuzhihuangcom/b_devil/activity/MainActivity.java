@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("加减号按钮");
         list.add("自定义圆");
         list.add("下拉刷新自定义横幅");
+        list.add("水波纹效果");
     }
 
     private void init() {
@@ -48,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else if (position == 2) {
                     Intent intent = new Intent(MainActivity.this, PullDownActivity.class);
+                    startActivity(intent);
+                } else if (position == 3) {
+                    Intent intent = new Intent(MainActivity.this, RippleActivity.class);
                     startActivity(intent);
                 }
             }

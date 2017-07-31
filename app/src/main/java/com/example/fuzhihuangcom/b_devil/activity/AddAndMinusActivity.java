@@ -12,6 +12,7 @@ import com.example.fuzhihuangcom.b_devil.view.AddView;
 
 /**
  * Created by fuzhihuang on 2017/7/3.
+ * +or- acitivty
  */
 
 public class AddAndMinusActivity extends AppCompatActivity {
