@@ -93,5 +93,13 @@ public class CircleView extends View {
         int height = getHeight() - paddingTop - paddingBottom;
         int radius = Math.min(width, height) / 2;
         canvas.drawCircle(paddingLeft + width / 2, paddingTop + height / 2, radius, mPaint);
+
+       /* mPaint.setStyle(Paint.Style.STROKE);
+        float x = (getWidth() - getHeight() / 2) / 2;
+        float y = getHeight() / 4;
+        RectF oval = new RectF( x, y,
+                getWidth() - x, getHeight() - y);
+        mPaint.setStrokeWidth(20);                                                                  // 画笔变粗
+        canvas.drawArc(oval, -90, 220, false, mPaint);*/
     }
 }
