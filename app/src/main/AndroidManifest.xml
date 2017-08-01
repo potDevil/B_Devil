@@ -22,6 +22,7 @@
         <activity android:name=".activity.PullDownActivity"/>
         <activity android:name=".activity.RippleActivity"/>
         <activity android:name=".activity.BandRectActivity"/>
+        <activity android:name=".activity.BasicViewGroupActivity"/>
     </application>
 
 </manifest>

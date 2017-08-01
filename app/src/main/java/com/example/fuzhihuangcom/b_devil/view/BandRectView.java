@@ -45,7 +45,7 @@ public class BandRectView extends View {
         mRectHeight = getHeight();
         mRectWidth = (int) (mWidth * 0.6 / mRectCount);
         // CLAMP的作用是如果渲染器超出原始边界范围，则会复制边缘颜色对超出范围的区域进行着色
-        mLinearGradient = new LinearGradient(0, 0, 0, mRectHeight, Color.YELLOW, Color.BLUE, Shader.TileMode.CLAMP);
+        mLinearGradient = new LinearGradient(0, 0, 0, mRectHeight, Color.YELLOW, Color.BLUE, Shader.TileMode.REPEAT);
         mPaint.setShader(mLinearGradient);
     }
 

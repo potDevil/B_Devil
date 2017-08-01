@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("下拉刷新自定义横幅");
         list.add("水波纹效果");
         list.add("音频条形图");
+        list.add("自定义组合控件");
     }
 
     private void init() {
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else if (position == 4) {
                     Intent intent = new Intent(MainActivity.this, BandRectActivity.class);
+                    startActivity(intent);
+                } else if (position == 5) {
+                    Intent intent = new Intent(MainActivity.this, BasicViewGroupActivity.class);
                     startActivity(intent);
                 }
             }
