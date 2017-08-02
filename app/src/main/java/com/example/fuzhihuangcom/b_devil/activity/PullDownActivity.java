@@ -27,6 +27,7 @@ public class PullDownActivity extends Activity implements View.OnTouchListener {
         setContentView(R.layout.activity_pull_down);
         mPdv = (PullDownView) findViewById(R.id.pdv);
         mTv = (TextView) findViewById(R.id.tv);
+        mPdv.showView(false);
 //        mPdv.setOnTouchListener(this);
         mPdv.setPullDownListener(new PullDownView.PullDownListener() {
             @Override

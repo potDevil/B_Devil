@@ -57,15 +57,23 @@ public class PullDownView extends View {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PullDownView);
         mFlag = ta.getBoolean(R.styleable.PullDownView_view_status, false);
         ta.recycle();
+        showView(mFlag);
         init(context);
     }
 
-    private void init(Context context) {
-        if (mFlag) {
+    /**
+     * 展示快速提问还是指名提问
+     * @param flag true为快速提问，false为指名提问
+     */
+    public void showView(boolean flag) {
+        if (flag) {
             mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.fast_question_down_tint);
         } else {
             mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.point_question_down_tint);
         }
+    }
+
+    private void init(Context context) {
         mContext = context;
         mPaint1 = new Paint(Paint.ANTI_ALIAS_FLAG);       // 抗锯齿
         mBitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.point_question_down_tint);
