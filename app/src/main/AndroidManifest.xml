@@ -23,6 +23,7 @@
         <activity android:name=".activity.RippleActivity"/>
         <activity android:name=".activity.BandRectActivity"/>
         <activity android:name=".activity.BasicViewGroupActivity"/>
+        <activity android:name=".activity.RectAnimatorActivity"/>
     </application>
 
 </manifest>

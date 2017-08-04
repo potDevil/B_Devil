@@ -86,21 +86,6 @@ public class CircleView extends View {
         mScroller.startScroll(mScroller.getFinalX(), mScroller.getFinalY(), dx, dy, 250);
         invalidate();//这里必须调用invalidate()才能保证computeScroll()会被调用，否则不一定会刷新界面，看不到滚动效果
     }
-   /* @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_UP:
-                View viewGroup = (View) getParent();
-                mScroller.startScroll(
-                        viewGroup.getScrollX()
-                        ,viewGroup.getScrollY()
-                        ,-viewGroup.getScrollX()
-                        ,-viewGroup.getScrollY()
-                        ,2000);
-                invalidate();
-        }
-        return true;
-    }*/
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
