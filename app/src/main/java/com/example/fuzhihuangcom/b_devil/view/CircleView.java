@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Scroller;
 
 import com.example.fuzhihuangcom.b_devil.R;
 
@@ -19,8 +20,10 @@ import com.example.fuzhihuangcom.b_devil.R;
 
 public class CircleView extends View {
 
+    private Context mContext;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);// 抗锯齿
     private int mColor = Color.GRAY;
+    private Scroller mScroller;
 
     public CircleView(Context context) {
         this(context, null);
@@ -49,6 +52,7 @@ public class CircleView extends View {
          *  4、使用自定义属性，必须在布局文件中添加schemas声明：
          *  xmlns:app="http://schemas.android.com/apk/res-auto"
          */
+        mContext = context;
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
         mColor = ta.getColor(R.styleable.CircleView_circle_color, Color.RED);
         ta.recycle();
@@ -57,7 +61,46 @@ public class CircleView extends View {
 
     private void init() {
         mPaint.setColor(mColor);
+        mScroller = new Scroller(mContext);
     }
+
+    @Override
+    public void computeScroll() {
+        if (mScroller.computeScrollOffset()) {
+            ((View) getParent()).scrollTo(mScroller.getCurrX(), mScroller.getFinalY());
+            invalidate();
+        }
+        super.computeScroll();
+    }
+
+    //调用此方法滚动到目标位置
+    public void smoothScrollTo(int fx, int fy) {
+        int dx = fx - mScroller.getFinalX();
+        int dy = fy - mScroller.getFinalY();
+        smoothScrollBy(dx, dy);
+    }
+
+    //调用此方法设置滚动的相对偏移
+    public void smoothScrollBy(int dx, int dy) {
+        //设置mScroller的滚动偏移量
+        mScroller.startScroll(mScroller.getFinalX(), mScroller.getFinalY(), dx, dy, 250);
+        invalidate();//这里必须调用invalidate()才能保证computeScroll()会被调用，否则不一定会刷新界面，看不到滚动效果
+    }
+   /* @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_UP:
+                View viewGroup = (View) getParent();
+                mScroller.startScroll(
+                        viewGroup.getScrollX()
+                        ,viewGroup.getScrollY()
+                        ,-viewGroup.getScrollX()
+                        ,-viewGroup.getScrollY()
+                        ,2000);
+                invalidate();
+        }
+        return true;
+    }*/
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

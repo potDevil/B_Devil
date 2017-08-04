@@ -6,8 +6,9 @@
               android:orientation="horizontal">
 
     <com.example.fuzhihuangcom.b_devil.view.CircleView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/cv"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_margin="10dp"
         android:padding="5dp"
         app:circle_color="@color/colorPrimaryDark"/>

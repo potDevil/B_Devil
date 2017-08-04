@@ -66,6 +66,7 @@ public class PullDownView extends View {
      * @param flag true为快速提问，false为指名提问
      */
     public void showView(boolean flag) {
+        mFlag = flag;
         if (flag) {
             mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.fast_question_down_tint);
         } else {
