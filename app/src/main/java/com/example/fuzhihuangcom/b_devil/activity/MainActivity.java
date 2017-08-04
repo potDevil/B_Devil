@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fuzhihuangcom.b_devil.R;
 
@@ -60,8 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, BandRectActivity.class);
                     startActivity(intent);
                 } else if (position == 5) {
-                    Intent intent = new Intent(MainActivity.this, BasicViewGroupActivity.class);
-                    startActivity(intent);
+                  /*  Intent intent = new Intent(MainActivity.this, BasicViewGroupActivity.class);
+                    startActivity(intent);*/
+                    Toast.makeText(MainActivity.this, "还未完成", Toast.LENGTH_SHORT).show();
                 } else if (position == 6) {
                     Intent intent = new Intent(MainActivity.this, RectAnimatorActivity.class);
                     startActivity(intent);
