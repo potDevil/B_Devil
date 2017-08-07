@@ -12,6 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.fuzhihuangcom.b_devil.R;
+import com.example.fuzhihuangcom.b_devil.utils.AndroidUtils;
+
+import static com.example.fuzhihuangcom.b_devil.utils.AndroidUtils.dip2px;
 
 /**
  * Created by fuzhihuang on 2017/7/25.
@@ -96,7 +99,7 @@ public class PullDownView extends View {
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
 
         if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(dip2px(mContext, 66), dip2px(mContext, 140));
+            setMeasuredDimension(AndroidUtils.dip2px(mContext, 66), dip2px(mContext, 140));
         } else if (widthMeasureSpec == MeasureSpec.AT_MOST) {
             setMeasuredDimension(dip2px(mContext, 66), heightSpecSize);
         } else if (heightSpecMode == MeasureSpec.AT_MOST) {
@@ -173,13 +176,7 @@ public class PullDownView extends View {
         return true;
     }
 
-    /**
-     * 根据手机的分辨率从 dip 的单位 转成为 px(像素)
-     */
-    public static int dip2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
-    }
+
 
     public interface PullDownListener {
         /**

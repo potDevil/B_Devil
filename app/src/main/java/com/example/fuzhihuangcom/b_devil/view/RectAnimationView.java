@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import static com.example.fuzhihuangcom.b_devil.utils.AndroidUtils.dip2px;
+
 /**
  * Created by fuzhihuang on 2017/8/4.
  */
@@ -39,11 +41,11 @@ public class RectAnimationView extends View {
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
 
         if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(PullDownView.dip2px(mContext, 240), PullDownView.dip2px(mContext, 50));
+            setMeasuredDimension(dip2px(mContext, 240), dip2px(mContext, 50));
         } else if (widthMeasureSpec == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(PullDownView.dip2px(mContext, 240), heightSpecSize);
+            setMeasuredDimension(dip2px(mContext, 240), heightSpecSize);
         } else if (heightSpecMode == MeasureSpec.AT_MOST) {
-            setMeasuredDimension(widthSpecSize, PullDownView.dip2px(mContext, 50));
+            setMeasuredDimension(widthSpecSize, dip2px(mContext, 50));
         }
     }
 
@@ -58,15 +60,15 @@ public class RectAnimationView extends View {
         int width = getWidth() - paddingRight - paddingLeft;
         int height = getHeight() - paddingTop - paddingBottom;
         mPaint.setAlpha(12);
-        canvas.drawRect(0, 0, PullDownView.dip2px(mContext, 240), height, mPaint);
+        canvas.drawRect(0, 0, dip2px(mContext, 240), height, mPaint);
         mPaint.setAlpha(15);
-        canvas.drawRect(PullDownView.dip2px(mContext, 20), 0, PullDownView.dip2px(mContext, 240) - PullDownView.dip2px(mContext, 20), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 20), 0, dip2px(mContext, 240) - dip2px(mContext, 20), height, mPaint);
         mPaint.setAlpha(25);
-        canvas.drawRect(PullDownView.dip2px(mContext, 40), 0, PullDownView.dip2px(mContext, 240) - PullDownView.dip2px(mContext, 40), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 40), 0, dip2px(mContext, 240) - dip2px(mContext, 40), height, mPaint);
         mPaint.setAlpha(30);
-        canvas.drawRect(PullDownView.dip2px(mContext, 60), 0, PullDownView.dip2px(mContext, 240) - PullDownView.dip2px(mContext, 60), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 60), 0, dip2px(mContext, 240) - dip2px(mContext, 60), height, mPaint);
         mPaint.setAlpha(35);
-        canvas.drawRect(PullDownView.dip2px(mContext, 80), 0, PullDownView.dip2px(mContext, 240) - PullDownView.dip2px(mContext, 80), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 80), 0, dip2px(mContext, 240) - dip2px(mContext, 80), height, mPaint);
     }
 
     /**
