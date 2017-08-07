@@ -23,7 +23,7 @@ public class RectAnimationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rect_animator);
+        setContentView(R.layout.activity_rect_animation);
 
         mRavg = (RectAnimationViewGroup) findViewById(R.id.ravg);
         mBt1 = (Button) findViewById(R.id.bt1);
