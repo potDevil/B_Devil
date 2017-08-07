@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("音频条形图");
         list.add("自定义组合控件");
         list.add("条形动画");
+        list.add("拖拽控件");
     }
 
     private void init() {
@@ -66,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "还未完成", Toast.LENGTH_SHORT).show();
                 } else if (position == 6) {
                     Intent intent = new Intent(MainActivity.this, RectAnimationActivity.class);
+                    startActivity(intent);
+                } else if (position == 7) {
+                    Intent intent = new Intent(MainActivity.this, DragActivity.class);
                     startActivity(intent);
                 }
             }
