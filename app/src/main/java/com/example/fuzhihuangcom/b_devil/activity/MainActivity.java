@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         list.add("自定义组合控件");
         list.add("条形动画");
         list.add("拖拽控件");
+        list.add("测试A");
+        list.add("测试B");
+        list.add("测试C");
+        list.add("测试D");
+        list.add("测试E");
     }
 
     private void init() {
