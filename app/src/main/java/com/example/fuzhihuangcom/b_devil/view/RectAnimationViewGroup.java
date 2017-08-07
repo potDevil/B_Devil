@@ -37,7 +37,7 @@ public class RectAnimationViewGroup extends RelativeLayout {
     }
 
     private void initView() {
-        mView = inflate(mContext, R.layout.rect_animation_viewgroup, this);
+        mView = inflate(mContext, R.layout.viewgroup_rect_animation, this);
         // 获取控件
         mRectAnimationView = (RectAnimationView) mView.findViewById(R.id.rav);
     }
