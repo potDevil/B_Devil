@@ -12,28 +12,22 @@ import android.view.View;
  * Created by fuzhihuang on 2017/8/4.
  */
 
-public class RectAnimatorView extends View {
+public class RectAnimationView extends View {
 
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);// 抗锯齿
     private Context mContext;
 
-    public RectAnimatorView(Context context) {
+    public RectAnimationView(Context context) {
         this(context, null);
     }
 
-    public RectAnimatorView(Context context, @Nullable AttributeSet attrs) {
+    public RectAnimationView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public RectAnimatorView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public RectAnimationView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-        init();
-    }
-
-    private void init() {
-        mPaint.setColor(Color.parseColor("#17b03e"));
-        mPaint.setAlpha(12);
     }
 
     @Override
@@ -63,6 +57,7 @@ public class RectAnimatorView extends View {
 
         int width = getWidth() - paddingRight - paddingLeft;
         int height = getHeight() - paddingTop - paddingBottom;
+        mPaint.setAlpha(12);
         canvas.drawRect(0, 0, PullDownView.dip2px(mContext, 240), height, mPaint);
         mPaint.setAlpha(15);
         canvas.drawRect(PullDownView.dip2px(mContext, 20), 0, PullDownView.dip2px(mContext, 240) - PullDownView.dip2px(mContext, 20), height, mPaint);
@@ -72,5 +67,15 @@ public class RectAnimatorView extends View {
         canvas.drawRect(PullDownView.dip2px(mContext, 60), 0, PullDownView.dip2px(mContext, 240) - PullDownView.dip2px(mContext, 60), height, mPaint);
         mPaint.setAlpha(35);
         canvas.drawRect(PullDownView.dip2px(mContext, 80), 0, PullDownView.dip2px(mContext, 240) - PullDownView.dip2px(mContext, 80), height, mPaint);
+    }
+
+    /**
+     * @param flag true绿   false红
+     */
+    public void setPaintColor(boolean flag) {
+        if (flag)
+            mPaint.setColor(Color.parseColor("#17b03e"));
+        else
+            mPaint.setColor(Color.parseColor("#f13930"));
     }
 }

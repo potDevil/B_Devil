@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);*/
                     Toast.makeText(MainActivity.this, "还未完成", Toast.LENGTH_SHORT).show();
                 } else if (position == 6) {
-                    Intent intent = new Intent(MainActivity.this, RectAnimatorActivity.class);
+                    Intent intent = new Intent(MainActivity.this, RectAnimationActivity.class);
                     startActivity(intent);
                 }
             }

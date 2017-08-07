@@ -14,22 +14,22 @@ import com.example.fuzhihuangcom.b_devil.R;
  * Created by BigDevil on 2017/8/6.
  */
 
-public class RectAnimatorViewGroup extends RelativeLayout {
+public class RectAnimationViewGroup extends RelativeLayout {
 
-    private RectAnimatorView mRectAnimatorView;
+    private RectAnimationView mRectAnimationView;
     private Context mContext;
     private View mView;
     private TranslateAnimation mAnimation;
 
-    public RectAnimatorViewGroup(Context context) {
+    public RectAnimationViewGroup(Context context) {
         this(context, null);
     }
 
-    public RectAnimatorViewGroup(Context context, AttributeSet attrs) {
+    public RectAnimationViewGroup(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public RectAnimatorViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RectAnimationViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
         initView();
@@ -39,7 +39,7 @@ public class RectAnimatorViewGroup extends RelativeLayout {
     private void initView() {
         mView = inflate(mContext, R.layout.rect_animator_viewgroup, this);
         // 获取控件
-        mRectAnimatorView = (RectAnimatorView) mView.findViewById(R.id.rav);
+        mRectAnimationView = (RectAnimationView) mView.findViewById(R.id.rav);
     }
 
     private void init() {
@@ -47,10 +47,10 @@ public class RectAnimatorViewGroup extends RelativeLayout {
         DisplayMetrics dm = getResources().getDisplayMetrics();
         int width = dm.widthPixels;
         // 获取控件的宽
-        int viewWidth = mRectAnimatorView.getWidth();
+        int viewWidth = mRectAnimationView.getWidth();
         // 设置动画
         mAnimation = new TranslateAnimation(width + viewWidth, -200, 0, 0);
-        mAnimation.setDuration(500);//设置动画持续时间
+        mAnimation.setDuration(400);//设置动画持续时间
         mAnimation.setRepeatCount(0);//设置重复次数
 
         mAnimation.setAnimationListener(new Animation.AnimationListener() {
@@ -61,7 +61,7 @@ public class RectAnimatorViewGroup extends RelativeLayout {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                mRectAnimatorView.setVisibility(View.GONE);
+                mRectAnimationView.setVisibility(View.GONE);
             }
 
             @Override
@@ -71,10 +71,22 @@ public class RectAnimatorViewGroup extends RelativeLayout {
         });
     }
 
+    /**
+     * 开启动画
+     */
     public void startAnimation() {
-        if (mAnimation != null)
-            mRectAnimatorView.setVisibility(View.VISIBLE);
-            mRectAnimatorView.setAnimation(mAnimation);
+        if (mAnimation != null) {
+            mRectAnimationView.setVisibility(View.VISIBLE);
+            mRectAnimationView.setAnimation(mAnimation);
             mAnimation.start();
+        }
+    }
+
+    /**
+     * 设置长条颜色 红色代表涨 绿色代表跌
+     * @param flag  true绿   false红
+     */
+    public void setRectColor(boolean flag) {
+        mRectAnimationView.setPaintColor(flag);
     }
 }

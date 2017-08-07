@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/black">
 
-    <com.example.fuzhihuangcom.b_devil.view.RectAnimatorView
+    <com.example.fuzhihuangcom.b_devil.view.RectAnimationView
         android:id="@+id/rav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
