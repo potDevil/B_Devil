@@ -4,10 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.example.fuzhihuangcom.b_devil.R;
@@ -19,9 +17,9 @@ import com.example.fuzhihuangcom.b_devil.R;
 public class RectAnimatorViewGroup extends RelativeLayout {
 
     private RectAnimatorView mRectAnimatorView;
-    private Button mBt;
     private Context mContext;
     private View mView;
+    private TranslateAnimation mAnimation;
 
     public RectAnimatorViewGroup(Context context) {
         this(context, null);
@@ -33,26 +31,29 @@ public class RectAnimatorViewGroup extends RelativeLayout {
 
     public RectAnimatorViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mView = inflate(context, R.layout.rect_animator_viewgroup, null);
         mContext = context;
+        initView();
+        init();
+    }
+
+    private void initView() {
+        mView = inflate(mContext, R.layout.rect_animator_viewgroup, this);
         // 获取控件
         mRectAnimatorView = (RectAnimatorView) mView.findViewById(R.id.rav);
-        mBt = (Button) mView.findViewById(R.id.bt);
-        init();
     }
 
     private void init() {
         // 获取屏幕宽
-        DisplayMetrics dm2 = getResources().getDisplayMetrics();
-        int width = dm2.widthPixels;
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        int width = dm.widthPixels;
         // 获取控件的宽
         int viewWidth = mRectAnimatorView.getWidth();
         // 设置动画
-        final TranslateAnimation animation = new TranslateAnimation(width + viewWidth, -200, 0, 0);
-        animation.setDuration(1000);//设置动画持续时间
-        animation.setRepeatCount(0);//设置重复次数
+        mAnimation = new TranslateAnimation(width + viewWidth, -200, 0, 0);
+        mAnimation.setDuration(500);//设置动画持续时间
+        mAnimation.setRepeatCount(0);//设置重复次数
 
-        animation.setAnimationListener(new Animation.AnimationListener() {
+        mAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -68,14 +69,12 @@ public class RectAnimatorViewGroup extends RelativeLayout {
 
             }
         });
+    }
 
-        mBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mRectAnimatorView.setVisibility(View.VISIBLE);
-                mRectAnimatorView.setAnimation(animation);
-                animation.start();
-            }
-        });
+    public void startAnimation() {
+        if (mAnimation != null)
+            mRectAnimatorView.setVisibility(View.VISIBLE);
+            mRectAnimatorView.setAnimation(mAnimation);
+            mAnimation.start();
     }
 }
