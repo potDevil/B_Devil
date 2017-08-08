@@ -2,16 +2,17 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="50dp">
 
     <com.example.fuzhihuangcom.b_devil.view.RectAnimationView
         android:id="@+id/rav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_height="50dp"
+        android:layout_marginLeft="-110dp"
+        android:visibility="gone"/>
 
     <View
         android:layout_width="140dp"
         android:layout_height="50dp"
-        android:background="@color/black" />
+        android:background="@color/grey1" />
 </RelativeLayout>

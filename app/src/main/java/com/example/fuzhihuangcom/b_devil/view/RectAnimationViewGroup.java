@@ -49,8 +49,8 @@ public class RectAnimationViewGroup extends RelativeLayout {
         // 获取控件的宽
         int viewWidth = mRectAnimationView.getWidth();
         // 设置动画
-        mAnimation = new TranslateAnimation(width + viewWidth, -200, 0, 0);
-        mAnimation.setDuration(400);//设置动画持续时间
+        mAnimation = new TranslateAnimation(width + viewWidth + 150, -200, 0, 0);
+        mAnimation.setDuration(300);//设置动画持续时间
         mAnimation.setRepeatCount(0);//设置重复次数
 
         mAnimation.setAnimationListener(new Animation.AnimationListener() {
