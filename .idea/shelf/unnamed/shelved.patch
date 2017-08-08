@@ -1,0 +1,57 @@
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision 5e36f47505d036efe4f44dfefc808f7199d3a45b)
++++ .idea/gradle.xml	(revision )
+@@ -8,7 +8,10 @@
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/BaseRecyclerViewAdapterHelper-master" />
+             <option value="$PROJECT_DIR$/app" />
++            <option value="$PROJECT_DIR$/library" />
++            <option value="$PROJECT_DIR$/material-spinner-1.0.5" />
+           </set>
+         </option>
+         <option name="resolveModulePerSourceSet" value="false" />
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(revision 5e36f47505d036efe4f44dfefc808f7199d3a45b)
++++ .idea/modules.xml	(revision )
+@@ -4,7 +4,10 @@
+     <modules>
+       <module fileurl="file://$PROJECT_DIR$/B_Devil.iml" filepath="$PROJECT_DIR$/B_Devil.iml" />
+       <module fileurl="file://$PROJECT_DIR$/B_Devil_clone.iml" filepath="$PROJECT_DIR$/B_Devil_clone.iml" />
++      <module fileurl="file://$PROJECT_DIR$/BaseRecyclerViewAdapterHelper-master/BaseRecyclerViewAdapterHelper-master.iml" filepath="$PROJECT_DIR$/BaseRecyclerViewAdapterHelper-master/BaseRecyclerViewAdapterHelper-master.iml" />
+       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
++      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
++      <module fileurl="file://$PROJECT_DIR$/material-spinner-1.0.5/material-spinner-1.0.5.iml" filepath="$PROJECT_DIR$/material-spinner-1.0.5/material-spinner-1.0.5.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 5e36f47505d036efe4f44dfefc808f7199d3a45b)
++++ app/src/main/AndroidManifest.xml	(revision )
+@@ -1,8 +1,10 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
++          xmlns:tools="http://schemas.android.com/tools"
+           package="com.example.fuzhihuangcom.b_devil">
+ 
+     <application
++        tools:replace="android:icon, android:theme"
+         android:allowBackup="true"
+         android:icon="@mipmap/ic_launcher"
+         android:label="@string/app_name"
+\ No newline at end of file
