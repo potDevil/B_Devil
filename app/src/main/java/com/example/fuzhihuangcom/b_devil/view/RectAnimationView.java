@@ -59,7 +59,7 @@ public class RectAnimationView extends View {
 
         int width = getWidth() - paddingRight - paddingLeft;
         int height = getHeight() - paddingTop - paddingBottom;
-        mPaint.setAlpha(12);
+      /*  mPaint.setAlpha(12);
         canvas.drawRect(0, 0, dip2px(mContext, 240), height, mPaint);
         mPaint.setAlpha(15);
         canvas.drawRect(dip2px(mContext, 20), 0, dip2px(mContext, 240) - dip2px(mContext, 20), height, mPaint);
@@ -68,6 +68,20 @@ public class RectAnimationView extends View {
         mPaint.setAlpha(30);
         canvas.drawRect(dip2px(mContext, 60), 0, dip2px(mContext, 240) - dip2px(mContext, 60), height, mPaint);
         mPaint.setAlpha(35);
+        canvas.drawRect(dip2px(mContext, 80), 0, dip2px(mContext, 240) - dip2px(mContext, 80), height, mPaint);*/
+        mPaint.setAlpha(10);
+        canvas.drawRect(0, 0, dip2px(mContext, 20), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 220), 0, dip2px(mContext, 240), height, mPaint);
+        mPaint.setAlpha(25);
+        canvas.drawRect(dip2px(mContext, 20), 0, dip2px(mContext, 40), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 200), 0, dip2px(mContext, 220), height, mPaint);
+        mPaint.setAlpha(40);
+        canvas.drawRect(dip2px(mContext, 40), 0, dip2px(mContext, 60), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 180), 0, dip2px(mContext, 200), height, mPaint);
+        mPaint.setAlpha(55);
+        canvas.drawRect(dip2px(mContext, 60), 0, dip2px(mContext, 80), height, mPaint);
+        canvas.drawRect(dip2px(mContext, 160), 0, dip2px(mContext, 180), height, mPaint);
+        mPaint.setAlpha(70);
         canvas.drawRect(dip2px(mContext, 80), 0, dip2px(mContext, 240) - dip2px(mContext, 80), height, mPaint);
     }
 
