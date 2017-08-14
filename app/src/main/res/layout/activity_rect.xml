@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <com.example.fuzhihuangcom.b_devil.view.RectAnimationView
-        android:id="@+id/dv"
+        android:id="@+id/rav"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
 </LinearLayout>

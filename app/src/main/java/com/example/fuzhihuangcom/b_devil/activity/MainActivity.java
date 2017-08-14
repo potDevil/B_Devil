@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("条形动画");
         list.add("拖拽控件");
         list.add("矩形模式");
-        list.add("测试B");
+        list.add("GridView");
         list.add("测试C");
         list.add("测试D");
         list.add("测试E");
@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else if (position == 8) {
                     Intent intent = new Intent(MainActivity.this, RectActivity.class);
+                    startActivity(intent);
+                } else if (position == 9) {
+                    Intent intent = new Intent(MainActivity.this, GridViewActivity.class);
                     startActivity(intent);
                 }
             }

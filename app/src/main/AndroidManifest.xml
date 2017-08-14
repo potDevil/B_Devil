@@ -27,6 +27,7 @@
         <activity android:name=".activity.RecycleviewAnimationActivity"/>
         <activity android:name=".activity.DragActivity"/>
         <activity android:name=".activity.RectActivity"/>
+        <activity android:name=".activity.GridViewActivity"/>
     </application>
 
 </manifest>
