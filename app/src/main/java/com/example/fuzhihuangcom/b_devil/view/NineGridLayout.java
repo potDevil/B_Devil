@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fuzhihuangcom.b_devil.R;
+import com.example.fuzhihuangcom.b_devil.utils.AndroidUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -213,16 +215,19 @@ public abstract class NineGridLayout extends ViewGroup {
         if (showNumFlag) {//添加超过最大显示数量的文本
             int overCount = getListSize(mUrlList) - MAX_COUNT;
             if (overCount > 0) {
-                float textSize = 30;
+                float textSize = 20;
                 final TextView textView = new TextView(mContext);
-                textView.setText("+" + String.valueOf(overCount));
+                textView.setText(String.valueOf(overCount));
+                Drawable drawable = getResources().getDrawable(R.drawable.photo1);
+                // 第一个参数是距左边距离，第一个参数是距上边距离，第一个参数是是距右边距离，第一个参数是是距下边距离
+                drawable.setBounds(AndroidUtils.dip2px(mContext, 35), AndroidUtils.dip2px(mContext, -17), AndroidUtils.dip2px(mContext, 56), AndroidUtils.dip2px(mContext, 3));
+                textView.setCompoundDrawables(drawable, null, null, null);
                 textView.setTextColor(Color.WHITE);
                 textView.setPadding(0, singleHeight / 2 - getFontHeight(textSize), 0, 0);
                 textView.setTextSize(textSize);
                 textView.setGravity(Gravity.CENTER);
                 textView.setBackgroundColor(Color.BLACK);
                 textView.getBackground().setAlpha(120);
-
                 textView.layout(left, top, right, bottom);
                 addView(textView);
             }

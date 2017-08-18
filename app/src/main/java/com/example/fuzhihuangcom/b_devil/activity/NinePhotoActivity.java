@@ -69,41 +69,59 @@ public class NinePhotoActivity extends AppCompatActivity {
         mList.add(model2);
 
         NineGridTestInfo model3 = new NineGridTestInfo();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 2; i++) {
             model3.urlList.add(mUrls[i]);
         }
         mList.add(model3);
 
         NineGridTestInfo model4 = new NineGridTestInfo();
-        for (int i = 0; i < mUrls.length; i++) {
+        for (int i = 0; i < 3; i++) {
             model4.urlList.add(mUrls[i]);
         }
-        model4.isShowAll = false;
+//        model4.isShowAll = false;
         mList.add(model4);
 
         NineGridTestInfo model5 = new NineGridTestInfo();
-        for (int i = 0; i < mUrls.length; i++) {
+        for (int i = 0; i < 4; i++) {
             model5.urlList.add(mUrls[i]);
         }
-        model5.isShowAll = true;//显示全部图片
+//        model5.isShowAll = true;//显示全部图片
         mList.add(model5);
 
         NineGridTestInfo model6 = new NineGridTestInfo();
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 5; i++) {
             model6.urlList.add(mUrls[i]);
         }
         mList.add(model6);
 
         NineGridTestInfo model7 = new NineGridTestInfo();
-        for (int i = 3; i < 7; i++) {
+        for (int i = 0; i < 6; i++) {
             model7.urlList.add(mUrls[i]);
         }
         mList.add(model7);
 
         NineGridTestInfo model8 = new NineGridTestInfo();
-        for (int i = 3; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             model8.urlList.add(mUrls[i]);
         }
         mList.add(model8);
+
+        NineGridTestInfo model9 = new NineGridTestInfo();
+        for (int i = 0; i < 8; i++) {
+            model9.urlList.add(mUrls[i]);
+        }
+        mList.add(model9);
+
+        NineGridTestInfo model10 = new NineGridTestInfo();
+        for (int i = 0; i < 9; i++) {
+            model10.urlList.add(mUrls[i]);
+        }
+        mList.add(model10);
+
+        NineGridTestInfo model11 = new NineGridTestInfo();
+        for (int i = 0; i < 10; i++) {
+            model11.urlList.add(mUrls[i]);
+        }
+        mList.add(model11);
     }
 }
