@@ -30,7 +30,7 @@
         <activity android:name=".activity.DragActivity"/>
         <activity android:name=".activity.RectActivity"/>
         <activity android:name=".activity.GridViewActivity"/>
-        <activity android:name=".view.NinePhoto.RecyclerViewExampleActivity"/>
+        <activity android:name=".activity.NinePhotoActivity"/>
     </application>
 
 </manifest>

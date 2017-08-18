@@ -1,4 +1,4 @@
-package com.example.fuzhihuangcom.b_devil.view.NinePhoto;
+package com.example.fuzhihuangcom.b_devil.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

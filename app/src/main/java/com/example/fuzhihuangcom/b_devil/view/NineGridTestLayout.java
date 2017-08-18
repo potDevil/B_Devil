@@ -1,4 +1,4 @@
-package com.example.fuzhihuangcom.b_devil.view.NinePhoto;
+package com.example.fuzhihuangcom.b_devil.view;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -33,17 +33,11 @@ public class NineGridTestLayout extends NineGridLayout {
 
     @Override
     protected boolean displayOneImage(final ImageView imageView, String url, final int parentWidth) {
-        Picasso
-                .with(mContext)
-                .load(url)
-                .noFade()
-                .placeholder(R.mipmap.ic_launcher)
-                .error(R.mipmap.ic_launcher)
-                .into(imageView);
 
         Target target = new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                imageView.setImageBitmap(bitmap);
                 int w = bitmap.getWidth();
                 int h = bitmap.getHeight();
 
@@ -75,7 +69,13 @@ public class NineGridTestLayout extends NineGridLayout {
 //        ImageLoaderUtil imageLoaderUtil = ImageLoaderUtil.get();
 //        imageLoaderUtil.loadImage(url, imageView);
 //        Bitmap bitmap = imageLoaderUtil.loadImageBitMap(url);
-
+        Picasso
+                .with(mContext)
+                .load(url)
+                .noFade()
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(target);
         return false;
     }
 

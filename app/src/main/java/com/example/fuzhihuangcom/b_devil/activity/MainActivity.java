@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fuzhihuangcom.b_devil.R;
-import com.example.fuzhihuangcom.b_devil.view.NinePhoto.RecyclerViewExampleActivity;
 
 import java.util.ArrayList;
 
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, GridViewActivity.class);
                     startActivity(intent);
                 } else if(position == 10) {
-                    Intent intent = new Intent(MainActivity.this, RecyclerViewExampleActivity.class);
+                    Intent intent = new Intent(MainActivity.this, NinePhotoActivity.class);
                     startActivity(intent);
                 }
             }
