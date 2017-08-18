@@ -33,7 +33,7 @@ public class NineGridTestLayout extends NineGridLayout {
 
     @Override
     protected boolean displayOneImage(final ImageView imageView, String url, final int parentWidth) {
-
+        // picasso 图片加载的回调
         Target target = new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
