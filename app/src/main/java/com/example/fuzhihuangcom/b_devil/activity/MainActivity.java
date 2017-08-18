@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fuzhihuangcom.b_devil.R;
+import com.example.fuzhihuangcom.b_devil.view.NinePhoto.RecyclerViewExampleActivity;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("拖拽控件");
         list.add("矩形模式");
         list.add("GridView");
-        list.add("测试C");
+        list.add("Nine_Photo");
         list.add("测试D");
         list.add("测试E");
     }
@@ -81,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else if (position == 9) {
                     Intent intent = new Intent(MainActivity.this, GridViewActivity.class);
+                    startActivity(intent);
+                } else if(position == 10) {
+                    Intent intent = new Intent(MainActivity.this, RecyclerViewExampleActivity.class);
                     startActivity(intent);
                 }
             }

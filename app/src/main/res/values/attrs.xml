@@ -8,4 +8,8 @@
     <declare-styleable name="PullDownView">
         <attr name="view_status" format="boolean"></attr>
     </declare-styleable>
+
+    <declare-styleable name="NineGridLayout">
+        <attr name="sapcing" format="dimension"/>
+    </declare-styleable>
 </resources>

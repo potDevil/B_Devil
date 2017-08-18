@@ -34,4 +34,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     // RecyclerView框架
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.15'
+    // picasso 图片加载
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
