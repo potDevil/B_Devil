@@ -220,12 +220,17 @@ public abstract class NineGridLayout extends ViewGroup {
                 textView.setText(String.valueOf(overCount));
                 Drawable drawable = getResources().getDrawable(R.drawable.photo1);
                 // 第一个参数是距左边距离，第一个参数是距上边距离，第一个参数是是距右边距离，第一个参数是是距下边距离
-                drawable.setBounds(AndroidUtils.dip2px(mContext, 35), AndroidUtils.dip2px(mContext, -17), AndroidUtils.dip2px(mContext, 56), AndroidUtils.dip2px(mContext, 3));
+//                drawable.setBounds((right - left) / 2 - AndroidUtils.dip2px(mContext, 10)
+//                        , (bottom - top) / 2 - AndroidUtils.dip2px(mContext, 10)
+//                        , (right - left) / 2 + AndroidUtils.dip2px(mContext, 11)
+//                        , (bottom - top) / 2 + AndroidUtils.dip2px(mContext, 10));
+                drawable.setBounds(AndroidUtils.dip2px(mContext, 25), AndroidUtils.dip2px(mContext, -15), AndroidUtils.dip2px(mContext, 46), AndroidUtils.dip2px(mContext, 5));
                 textView.setCompoundDrawables(drawable, null, null, null);
+                textView.setCompoundDrawablePadding(AndroidUtils.dip2px(mContext, -6));
                 textView.setTextColor(Color.WHITE);
                 textView.setPadding(0, singleHeight / 2 - getFontHeight(textSize), 0, 0);
                 textView.setTextSize(textSize);
-                textView.setGravity(Gravity.CENTER);
+                textView.setGravity(Gravity.CENTER_HORIZONTAL);
                 textView.setBackgroundColor(Color.BLACK);
                 textView.getBackground().setAlpha(120);
                 textView.layout(left, top, right, bottom);
