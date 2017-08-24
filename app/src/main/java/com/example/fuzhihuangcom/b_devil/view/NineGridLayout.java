@@ -218,15 +218,14 @@ public abstract class NineGridLayout extends ViewGroup {
                 float textSize = 20;
                 final TextView textView = new TextView(mContext);
                 textView.setText(String.valueOf(overCount));
-                Drawable drawable = getResources().getDrawable(R.drawable.photo1);
+                Drawable drawable = getResources().getDrawable(R.drawable.photo2);
                 // 第一个参数是距左边距离，第一个参数是距上边距离，第一个参数是是距右边距离，第一个参数是是距下边距离
 //                drawable.setBounds((right - left) / 2 - AndroidUtils.dip2px(mContext, 10)
 //                        , (bottom - top) / 2 - AndroidUtils.dip2px(mContext, 10)
 //                        , (right - left) / 2 + AndroidUtils.dip2px(mContext, 11)
 //                        , (bottom - top) / 2 + AndroidUtils.dip2px(mContext, 10));
-                drawable.setBounds(AndroidUtils.dip2px(mContext, 25), AndroidUtils.dip2px(mContext, -15), AndroidUtils.dip2px(mContext, 46), AndroidUtils.dip2px(mContext, 5));
+                drawable.setBounds(AndroidUtils.dip2px(mContext, 27), AndroidUtils.dip2px(mContext, -14), AndroidUtils.dip2px(mContext, 45), AndroidUtils.dip2px(mContext, 2));
                 textView.setCompoundDrawables(drawable, null, null, null);
-                textView.setCompoundDrawablePadding(AndroidUtils.dip2px(mContext, -6));
                 textView.setTextColor(Color.WHITE);
                 textView.setPadding(0, singleHeight / 2 - getFontHeight(textSize), 0, 0);
                 textView.setTextSize(textSize);
