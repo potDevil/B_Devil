@@ -1,6 +1,5 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.GridView;
@@ -16,7 +15,7 @@ import java.util.List;
  * Created by fuzhihuang on 2017/8/11.
  */
 
-public class GridViewActivity extends Activity {
+public class GridViewActivity extends BaseActivity {
 
     private GridView mGrid;
     private List<Integer> mList;

@@ -2,20 +2,18 @@ package com.example.fuzhihuangcom.b_devil.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.fuzhihuangcom.b_devil.R;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     ArrayList<String> list;
     private ListView mListView;
@@ -52,43 +50,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    Intent intent = new Intent(MainActivity.this, AddAndMinusActivity.class);
-                    startActivity(intent);
+                    startActivity(AddAndMinusActivity.class);
                 } else if (position == 1) {
-                    Intent intent = new Intent(MainActivity.this, DrawCircleActivity.class);
-                    startActivity(intent);
+                   startActivity(DrawCircleActivity.class);
                 } else if (position == 2) {
-                    Intent intent = new Intent(MainActivity.this, PullDownActivity.class);
-                    startActivity(intent);
+                    startActivity(PullDownActivity.class);
                 } else if (position == 3) {
-                    Intent intent = new Intent(MainActivity.this, RippleActivity.class);
-                    startActivity(intent);
+                  startActivity(RippleActivity.class);
                 } else if (position == 4) {
                     Intent intent = new Intent(MainActivity.this, BandRectActivity.class);
                     startActivity(intent);
                 } else if (position == 5) {
                   /*  Intent intent = new Intent(MainActivity.this, BasicViewGroupActivity.class);
                     startActivity(intent);*/
-                    Toast.makeText(MainActivity.this, "还未完成", Toast.LENGTH_SHORT).show();
+                    showToast("还未完成");
                 } else if (position == 6) {
-                    Intent intent = new Intent(MainActivity.this, RectAnimationActivity.class);
-                    startActivity(intent);
+                    startActivity(RectAnimationActivity.class);
                 } else if (position == 7) {
-                    Intent intent = new Intent(MainActivity.this, DragActivity.class);
-                    startActivity(intent);
+                    startActivity(DragActivity.class);
                 } else if (position == 8) {
-                    Intent intent = new Intent(MainActivity.this, RectActivity.class);
-                    startActivity(intent);
+                    startActivity(RectActivity.class);
                 } else if (position == 9) {
-                    Intent intent = new Intent(MainActivity.this, GridViewActivity.class);
-                    startActivity(intent);
+                    startActivity(GridViewActivity.class);
                 } else if(position == 10) {
-                    Intent intent = new Intent(MainActivity.this, NinePhotoActivity.class);
-                    startActivity(intent);
+                    startActivity(NinePhotoActivity.class);
                 } else if(position == 11) {
 //                    Intent intent = new Intent(MainActivity.this, TextColorChangeActvity.class);
 //                    startActivity(intent);
-                    Toast.makeText(MainActivity.this, "还未完成", Toast.LENGTH_SHORT).show();
+                    showToast("还未完成");
                 }
             }
         });

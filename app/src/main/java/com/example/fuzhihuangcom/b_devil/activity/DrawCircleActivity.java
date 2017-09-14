@@ -1,7 +1,6 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.fuzhihuangcom.b_devil.R;
@@ -12,7 +11,7 @@ import com.example.fuzhihuangcom.b_devil.view.CircleView;
  * 自定义固定圆
  */
 
-public class DrawCircleActivity extends AppCompatActivity {
+public class DrawCircleActivity extends BaseActivity {
 
     private CircleView mCv;
 

@@ -1,6 +1,5 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +16,7 @@ import java.util.List;
  * Created by fuzhihuang on 2017/8/8.
  */
 
-public class RecycleviewAnimationActivity extends Activity {
+public class RecycleviewAnimationActivity extends BaseActivity {
 
     private RecyclerView mRv;
 

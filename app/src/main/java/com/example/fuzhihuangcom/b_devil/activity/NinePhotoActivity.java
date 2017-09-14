@@ -1,7 +1,6 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -16,7 +15,7 @@ import java.util.List;
  * Created by fuzhihuang on 2017/8/17.
  */
 
-public class NinePhotoActivity extends AppCompatActivity {
+public class NinePhotoActivity extends BaseActivity {
 
     private List<NineGridTestInfo> mList = new ArrayList<>();
     private String[] mUrls = new String[]{"http://d.hiphotos.baidu.com/image/h%3D200/sign=201258cbcd80653864eaa313a7dca115/ca1349540923dd54e54f7aedd609b3de9c824873.jpg",

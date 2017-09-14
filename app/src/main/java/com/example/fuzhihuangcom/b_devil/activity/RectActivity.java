@@ -1,7 +1,6 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.animation.LinearInterpolator;
@@ -13,7 +12,7 @@ import com.example.fuzhihuangcom.b_devil.view.RectAnimationView;
  * Created by fuzhihuang on 2017/8/11.
  */
 
-public class RectActivity extends Activity {
+public class RectActivity extends BaseActivity {
 
     private RectAnimationView mRav;
 

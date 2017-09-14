@@ -1,6 +1,5 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,7 +13,7 @@ import com.example.fuzhihuangcom.b_devil.view.PullDownView;
  * 下拉横幅刷新控件
  */
 
-public class PullDownActivity extends Activity implements View.OnTouchListener {
+public class PullDownActivity extends BaseActivity implements View.OnTouchListener {
 
     private PullDownView mPdv;
     private TextView mTv;

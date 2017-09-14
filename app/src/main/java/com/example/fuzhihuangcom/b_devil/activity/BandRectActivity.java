@@ -1,6 +1,5 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -11,7 +10,7 @@ import com.example.fuzhihuangcom.b_devil.R;
  * 音频条形图
  */
 
-public class BandRectActivity extends Activity {
+public class BandRectActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

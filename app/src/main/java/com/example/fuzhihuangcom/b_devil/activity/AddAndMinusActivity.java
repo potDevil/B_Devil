@@ -2,7 +2,6 @@ package com.example.fuzhihuangcom.b_devil.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
@@ -15,7 +14,7 @@ import com.example.fuzhihuangcom.b_devil.view.AddView;
  * +or- acitivty
  */
 
-public class AddAndMinusActivity extends AppCompatActivity {
+public class AddAndMinusActivity extends BaseActivity {
 
     private AddView mAdd_view;
     private TextView mTest_view1;
