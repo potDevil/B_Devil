@@ -40,7 +40,8 @@ public class MainActivity extends BaseActivity {
         list.add("GridView");
         list.add("Nine_Photo");
         list.add("文字渐变效果");
-        list.add("测试E");
+        list.add("测试A");
+        list.add("测试B");
     }
 
     private void init() {

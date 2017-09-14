@@ -1,7 +1,7 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.Toast;
 
@@ -9,11 +9,11 @@ import android.widget.Toast;
  * Created by fuzhihuang on 2017/9/14.
  */
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends Activity {
 
     private Toast mToast;
 
-    public void startActivity(Class<? extends AppCompatActivity> activity) {
+    public void startActivity(Class<? extends Activity> activity) {
         Intent intent = new Intent(BaseActivity.this, activity);
         startActivity(intent);
     }

@@ -22,4 +22,9 @@
         <item name="android:onClick">onClick</item>
         <item name="android:padding">8dp</item>
     </style>
+
+    <style name="Theme.AppStartLoad" parent="android:Theme">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>
