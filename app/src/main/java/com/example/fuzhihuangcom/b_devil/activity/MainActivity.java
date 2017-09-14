@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("矩形模式");
         list.add("GridView");
         list.add("Nine_Photo");
-        list.add("测试D");
+        list.add("文字渐变效果");
         list.add("测试E");
     }
 
@@ -85,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
                 } else if(position == 10) {
                     Intent intent = new Intent(MainActivity.this, NinePhotoActivity.class);
                     startActivity(intent);
+                } else if(position == 11) {
+//                    Intent intent = new Intent(MainActivity.this, TextColorChangeActvity.class);
+//                    startActivity(intent);
+                    Toast.makeText(MainActivity.this, "还未完成", Toast.LENGTH_SHORT).show();
                 }
             }
         });
