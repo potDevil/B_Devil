@@ -63,7 +63,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.toString().length() > 8) {
+                if (s.toString().length() >= 8) {
                     showToast("用户名或者密码不能超过8个字符");
                 }
             }
