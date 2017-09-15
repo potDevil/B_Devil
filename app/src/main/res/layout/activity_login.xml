@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,11 +17,11 @@
 
     <EditText
         android:id="@+id/et_un"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="90dp"
-        android:text="11111111111111111111111"/>
+        tools:text="11111111"/>
 
     <TextView
         android:id="@+id/tv_password"
@@ -34,9 +35,31 @@
 
     <EditText
         android:id="@+id/et_pw"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="140dp"
-        android:text="11111111111111111111111"/>
+        tools:text="11111111"/>
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/grey1"
+        android:padding="10dp"
+        android:text="登录"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:background="@color/grey1"
+        android:padding="10dp"
+        android:text="注册"
+        android:textSize="20dp"/>
 </RelativeLayout>
