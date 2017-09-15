@@ -89,9 +89,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             case R.id.tv_login:
                 if (TextUtils.isEmpty(mEt_un.getText()) || TextUtils.isEmpty(mEt_pw.getText())) {
                     showToast("用户名或密码不能为空");
-                } else {
-                    User findUserName = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_un.getText())).build().unique();
-                    User findPassword = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_pw.getText())).build().unique();
+                } else if(!TextUtils.isEmpty(mEt_un.getText()) && !TextUtils.isEmpty(mEt_pw.getText())){
+                    User findUserName = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_un.getText().toString().replace(" ", ""))).build().unique();
+                    User findPassword = mUserDao.queryBuilder().where(UserDao.Properties.Password.eq(mEt_pw.getText().toString().replace(" ", ""))).build().unique();
                     if (findUserName != null && findPassword != null) {
                         startActivity(MainActivity.class);
                     } else {
