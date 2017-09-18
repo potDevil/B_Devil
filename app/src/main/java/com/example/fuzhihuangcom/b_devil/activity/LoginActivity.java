@@ -93,10 +93,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     showToast("用户名或密码不能为空");
                 } else if(!TextUtils.isEmpty(mEt_un.getText()) && !TextUtils.isEmpty(mEt_pw.getText())){
                     List<User> listUserName = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_un.getText().toString().replace(" ", ""))).build().list();
-                    List<User> listPassword = mUserDao.queryBuilder().where(UserDao.Properties.Password.eq(mEt_pw.getText().toString().replace(" ", ""))).build().list();
-                    User findUserName = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_un.getText().toString().replace(" ", ""))).build().unique();
-                    User findPassword = mUserDao.queryBuilder().where(UserDao.Properties.Password.eq(mEt_pw.getText().toString().replace(" ", ""))).build().unique();
-                    if (findUserName != null && findPassword != null) {
+                    List<User> listPassword = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_pw.getText().toString().replace(" ", ""))).build().list();
+                    // 多次注册报错
+//                    User findUserName = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_un.getText().toString().replace(" ", ""))).build().unique();
+//                    User findPassword = mUserDao.queryBuilder().where(UserDao.Properties.Password.eq(mEt_pw.getText().toString().replace(" ", ""))).build().unique();
+                    if (listUserName.size() != 0 && listPassword.size() != 0) {
                         startActivity(MainActivity.class);
                     } else {
                         showToast("用户名或密码错误");
