@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity {
         list.add("GridView");
         list.add("Nine_Photo");
         list.add("文字渐变效果");
-        list.add("测试A");
+        list.add("圆形头像");
         list.add("测试B");
     }
 
@@ -79,6 +79,8 @@ public class MainActivity extends BaseActivity {
 //                    Intent intent = new Intent(MainActivity.this, TextColorChangeActvity.class);
 //                    startActivity(intent);
                     showToast("还未完成");
+                } else if(position == 12) {
+                    startActivity(ShowImageViewActivity.class);
                 }
             }
         });

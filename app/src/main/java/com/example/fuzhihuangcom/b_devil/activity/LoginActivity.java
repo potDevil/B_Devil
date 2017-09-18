@@ -16,6 +16,8 @@ import com.example.fuzhihuangcom.b_devil.R;
 import com.example.fuzhihuangcom.b_devil.greendao.UserDao;
 import com.example.fuzhihuangcom.b_devil.utils.DaoManager;
 
+import java.util.List;
+
 /**
  * Created by fuzhihuang on 2017/9/14.
  */
@@ -90,6 +92,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 if (TextUtils.isEmpty(mEt_un.getText()) || TextUtils.isEmpty(mEt_pw.getText())) {
                     showToast("用户名或密码不能为空");
                 } else if(!TextUtils.isEmpty(mEt_un.getText()) && !TextUtils.isEmpty(mEt_pw.getText())){
+                    List<User> listUserName = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_un.getText().toString().replace(" ", ""))).build().list();
+                    List<User> listPassword = mUserDao.queryBuilder().where(UserDao.Properties.Password.eq(mEt_pw.getText().toString().replace(" ", ""))).build().list();
                     User findUserName = mUserDao.queryBuilder().where(UserDao.Properties.Username.eq(mEt_un.getText().toString().replace(" ", ""))).build().unique();
                     User findPassword = mUserDao.queryBuilder().where(UserDao.Properties.Password.eq(mEt_pw.getText().toString().replace(" ", ""))).build().unique();
                     if (findUserName != null && findPassword != null) {

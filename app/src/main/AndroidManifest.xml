@@ -36,6 +36,7 @@
         <activity android:name=".activity.GridViewActivity"/>
         <activity android:name=".activity.NinePhotoActivity"/>
         <activity android:name=".activity.TextColorChangeActvity"/>
+        <activity android:name=".activity.ShowImageViewActivity"/>
     </application>
 
 </manifest>
