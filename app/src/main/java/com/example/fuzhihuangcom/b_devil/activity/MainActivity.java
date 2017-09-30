@@ -41,7 +41,7 @@ public class MainActivity extends BaseActivity {
         list.add("Nine_Photo");
         list.add("文字渐变效果");
         list.add("圆形头像");
-        list.add("测试B");
+        list.add("文字绘制");
     }
 
     private void init() {
@@ -81,6 +81,8 @@ public class MainActivity extends BaseActivity {
                     showToast("还未完成");
                 } else if(position == 12) {
                     startActivity(ShowImageViewActivity.class);
+                } else if(position == 13) {
+                    startActivity(StaticLayoutActivity.class);
                 }
             }
         });

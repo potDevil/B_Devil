@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.fuzhihuangcom.b_devil">
 
-    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -37,6 +37,7 @@
         <activity android:name=".activity.NinePhotoActivity"/>
         <activity android:name=".activity.TextColorChangeActvity"/>
         <activity android:name=".activity.ShowImageViewActivity"/>
+        <activity android:name=".activity.StaticLayoutActivity"/>
     </application>
 
 </manifest>
