@@ -38,6 +38,7 @@
         <activity android:name=".activity.TextColorChangeActvity"/>
         <activity android:name=".activity.ShowImageViewActivity"/>
         <activity android:name=".activity.StaticLayoutActivity"/>
+        <activity android:name=".activity.MalagasyTranslateActivity"/>
     </application>
 
 </manifest>

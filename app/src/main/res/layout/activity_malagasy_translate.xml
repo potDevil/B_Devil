@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rl_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/text_color_gray">
+
+    <LinearLayout
+        android:id="@+id/sb_et_container"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:background="#ffffff"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/icon_search"/>
+
+        <EditText
+            android:id="@+id/sb_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入要查询的中文"
+            android:singleLine="true"
+            android:textColor="#999"
+            android:textColorHint="#999999"
+            android:textCursorDrawable="@drawable/editcursor"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</RelativeLayout>

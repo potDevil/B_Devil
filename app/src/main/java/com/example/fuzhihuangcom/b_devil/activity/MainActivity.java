@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity {
         list.add("文字渐变效果");
         list.add("圆形头像");
         list.add("文字绘制");
+        list.add("马尔加什语翻译");
     }
 
     private void init() {
@@ -53,11 +54,11 @@ public class MainActivity extends BaseActivity {
                 if (position == 0) {
                     startActivity(AddAndMinusActivity.class);
                 } else if (position == 1) {
-                   startActivity(DrawCircleActivity.class);
+                    startActivity(DrawCircleActivity.class);
                 } else if (position == 2) {
                     startActivity(PullDownActivity.class);
                 } else if (position == 3) {
-                  startActivity(RippleActivity.class);
+                    startActivity(RippleActivity.class);
                 } else if (position == 4) {
                     Intent intent = new Intent(MainActivity.this, BandRectActivity.class);
                     startActivity(intent);
@@ -73,16 +74,18 @@ public class MainActivity extends BaseActivity {
                     startActivity(RectActivity.class);
                 } else if (position == 9) {
                     startActivity(GridViewActivity.class);
-                } else if(position == 10) {
+                } else if (position == 10) {
                     startActivity(NinePhotoActivity.class);
-                } else if(position == 11) {
+                } else if (position == 11) {
 //                    Intent intent = new Intent(MainActivity.this, TextColorChangeActvity.class);
 //                    startActivity(intent);
                     showToast("还未完成");
-                } else if(position == 12) {
+                } else if (position == 12) {
                     startActivity(ShowImageViewActivity.class);
-                } else if(position == 13) {
+                } else if (position == 13) {
                     startActivity(StaticLayoutActivity.class);
+                } else if (position == 14) {
+                    startActivity(MalagasyTranslateActivity.class);
                 }
             }
         });
