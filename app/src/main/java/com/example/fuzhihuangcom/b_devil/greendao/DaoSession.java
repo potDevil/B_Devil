@@ -8,7 +8,7 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import com.example.fuzhihuangcom.b_devil.Entity.User;
+import com.example.fuzhihuangcom.b_devil.entity.User;
 
 import com.example.fuzhihuangcom.b_devil.greendao.UserDao;
 

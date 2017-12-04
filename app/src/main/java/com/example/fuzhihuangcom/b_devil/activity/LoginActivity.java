@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.fuzhihuangcom.b_devil.Entity.User;
+import com.example.fuzhihuangcom.b_devil.entity.User;
 import com.example.fuzhihuangcom.b_devil.R;
 import com.example.fuzhihuangcom.b_devil.greendao.UserDao;
 import com.example.fuzhihuangcom.b_devil.utils.DaoManager;
