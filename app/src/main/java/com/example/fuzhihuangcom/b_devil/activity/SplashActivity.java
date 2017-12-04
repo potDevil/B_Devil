@@ -1,5 +1,6 @@
 package com.example.fuzhihuangcom.b_devil.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -16,6 +17,10 @@ public class SplashActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        if (isLauncherStart()) {
+            return;
+        }
+
         jump2main();
     }
 
@@ -27,5 +32,17 @@ public class SplashActivity extends BaseActivity {
                 finish();
             }
         }, 2500);
+    }
+
+    private boolean isLauncherStart() {
+        if (!this.isTaskRoot()) {
+            Intent mainIntent = getIntent();
+            String action = mainIntent.getAction();
+            if (mainIntent.hasCategory(Intent.CATEGORY_LAUNCHER) && action.equals(Intent.ACTION_MAIN)) {
+                finish();
+                return true;
+            }
+        }
+        return false;
     }
 }

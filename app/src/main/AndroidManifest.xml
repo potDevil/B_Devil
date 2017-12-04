@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+       <!-- 当我们按HOME键返回桌面，任务栈的状态被保留着 android:alwaysRetainTaskState="true"-->
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
