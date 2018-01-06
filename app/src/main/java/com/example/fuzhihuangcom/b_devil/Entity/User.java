@@ -1,4 +1,4 @@
-package com.example.fuzhihuangcom.b_devil.Entity;
+package com.example.fuzhihuangcom.b_devil.entity;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;

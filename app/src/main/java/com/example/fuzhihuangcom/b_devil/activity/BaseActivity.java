@@ -27,4 +27,18 @@ public class BaseActivity extends Activity {
         mToast = Toast.makeText(this, s, Toast.LENGTH_SHORT);
         mToast.show();
     }
+
+    //    @Override
+//    public void onBackPressed() {
+//        //按返回键返回桌面
+//        Intent intent = new Intent(Intent.ACTION_MAIN);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        intent.addCategory(Intent.CATEGORY_HOME);
+//        startActivity(intent);
+//    }
+    @Override
+    public void onBackPressed() {
+        //按返回键返回桌面
+        moveTaskToBack(true);
+    }
 }

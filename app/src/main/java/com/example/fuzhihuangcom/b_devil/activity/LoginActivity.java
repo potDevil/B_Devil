@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.fuzhihuangcom.b_devil.Entity.User;
+import com.example.fuzhihuangcom.b_devil.entity.User;
 import com.example.fuzhihuangcom.b_devil.R;
 import com.example.fuzhihuangcom.b_devil.greendao.UserDao;
 import com.example.fuzhihuangcom.b_devil.utils.DaoManager;
@@ -30,6 +30,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private TextView mTv_register;
 
     private UserDao mUserDao;
+
+    private long lastBackEventTime;
+    private static final int TIME_GAP = 2000;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -115,5 +118,26 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         super.onResume();
         mEt_un.setText(null);
         mEt_pw.setText(null);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishApp();
+    }
+
+    public void finishApp() {
+        try {
+            long currentTime = System.currentTimeMillis();
+            if (lastBackEventTime == 0 || currentTime <= lastBackEventTime || (currentTime - lastBackEventTime) >= TIME_GAP) {
+                lastBackEventTime = currentTime;
+                showToast("再按一次退出程序");
+            } else {
+                lastBackEventTime = 0;
+                finish();
+                //  android.os.Process.killProcess(Process.myPid());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
