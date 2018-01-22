@@ -36,9 +36,9 @@ public class BaseActivity extends Activity {
 //        intent.addCategory(Intent.CATEGORY_HOME);
 //        startActivity(intent);
 //    }
-    @Override
-    public void onBackPressed() {
-        //按返回键返回桌面
-        moveTaskToBack(true);
-    }
+//    @Override
+//    public void onBackPressed() {
+//        //按返回键返回桌面
+//        moveTaskToBack(true);
+//    }
 }
