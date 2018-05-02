@@ -28,30 +28,35 @@ public class DragActivity extends BaseActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TranslateAnimation translateAnimation = new TranslateAnimation(0, 100, 0, 0);
-                translateAnimation.setDuration(1000);
-                translateAnimation.setFillAfter(true);
-                tv_news.startAnimation(translateAnimation);
-                translateAnimation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        //清除动画
-                        int left = tv_news.getLeft()+ 100;
-                        int top = tv_news.getTop();
-                        int width = tv_news.getWidth();
-                        int height = tv_news.getHeight();
-                        tv_news.clearAnimation();
-                        tv_news.layout(left, top, left+width, top+height);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-                    }
-                });
+                // 补间动画
+//                TranslateAnimation translateAnimation = new TranslateAnimation(0, 100, 0, 0);
+//                translateAnimation.setDuration(1000);
+//                translateAnimation.setFillAfter(true);
+//                tv_news.startAnimation(translateAnimation);
+//                translateAnimation.setAnimationListener(new Animation.AnimationListener() {
+//                    @Override
+//                    public void onAnimationStart(Animation animation) {
+//                    }
+//
+//                    @Override
+//                    public void onAnimationEnd(Animation animation) {
+//                        //清除动画
+//                        int left = tv_news.getLeft()+ 100;
+//                        int top = tv_news.getTop();
+//                        int width = tv_news.getWidth();
+//                        int height = tv_news.getHeight();
+//                        tv_news.clearAnimation();
+//                        tv_news.layout(left, top, left+width, top+height);
+//                    }
+//
+//                    @Override
+//                    public void onAnimationRepeat(Animation animation) {
+//                    }
+//                });
+                // 属性动画
+                ObjectAnimator animator = ObjectAnimator.ofFloat(tv_news, "translationX", 100);
+                animator.setDuration(1000);
+                animator.start();
             }
         });
 
