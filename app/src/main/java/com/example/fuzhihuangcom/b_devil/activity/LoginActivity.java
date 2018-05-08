@@ -83,7 +83,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void addUser() {
-        User user = new User(null, "admin", "admin");
+        User user = new User(null, "a", "a");
         mUserDao.insert(user);
         showToast("注册成功");
     }

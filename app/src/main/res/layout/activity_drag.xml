@@ -22,6 +22,7 @@
         android:text="3条新互动"
         android:textColor="@color/white"
         android:textSize="13dp"
+        android:visibility="gone"
         tools:visibility="visible" />
 
     <Button
@@ -30,4 +31,29 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="我点点点" />
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:gravity="center"
+        android:text="3条新互动"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        tools:visibility="visible" />
+
+    <TextView
+        android:layout_below="@+id/tv_test"
+        android:id="@+id/tv_test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="3条新互动"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        tools:visibility="visible" />
+
 </RelativeLayout>
