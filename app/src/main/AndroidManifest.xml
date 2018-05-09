@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.fuzhihuangcom.b_devil">
+    package="com.example.fuzhihuangcom.b_devil">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
@@ -11,36 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-       <!-- 当我们按HOME键返回桌面，任务栈的状态被保留着 android:alwaysRetainTaskState="true"-->
+        <!-- 当我们按HOME键返回桌面，任务栈的状态被保留着 android:alwaysRetainTaskState="true"-->
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppStartLoad">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity"/>
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.AddAndMinusActivity"/>
-        <activity android:name=".activity.DrawCircleActivity"/>
-        <activity android:name=".activity.PullDownActivity"/>
-        <activity android:name=".activity.RippleActivity"/>
-        <activity android:name=".activity.BandRectActivity"/>
-        <activity android:name=".activity.BasicViewGroupActivity"/>
-        <activity android:name=".activity.RectAnimationActivity"/>
-        <activity android:name=".activity.RecycleviewAnimationActivity"/>
-        <activity android:name=".activity.DragActivity"/>
-        <activity android:name=".activity.RectActivity"/>
-        <activity android:name=".activity.GridViewActivity"/>
-        <activity android:name=".activity.NinePhotoActivity"/>
-        <activity android:name=".activity.TextColorChangeActvity"/>
-        <activity android:name=".activity.ShowImageViewActivity"/>
-        <activity android:name=".activity.StaticLayoutActivity"/>
-        <activity android:name=".activity.MalagasyTranslateActivity"/>
-        <activity android:name=".activity.InputBoxActivity"/>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.AddAndMinusActivity" />
+        <activity android:name=".activity.DrawCircleActivity" />
+        <activity android:name=".activity.PullDownActivity" />
+        <activity android:name=".activity.RippleActivity" />
+        <activity android:name=".activity.BandRectActivity" />
+        <activity android:name=".activity.BasicViewGroupActivity" />
+        <activity android:name=".activity.RectAnimationActivity" />
+        <activity android:name=".activity.RecycleviewAnimationActivity" />
+        <activity android:name=".activity.DragActivity" />
+        <activity android:name=".activity.RectActivity" />
+        <activity android:name=".activity.GridViewActivity" />
+        <activity android:name=".activity.NinePhotoActivity" />
+        <activity android:name=".activity.TextColorChangeActvity" />
+        <activity android:name=".activity.ShowImageViewActivity" />
+        <activity android:name=".activity.StaticLayoutActivity" />
+        <activity android:name=".activity.MalagasyTranslateActivity" />
+        <activity android:name=".activity.InputBoxActivity" />
+        <activity android:name=".activity.HtmlActivity" />
     </application>
 
 </manifest>

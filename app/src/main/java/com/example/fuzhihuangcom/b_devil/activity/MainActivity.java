@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity {
         list.add("文字绘制");
         list.add("马尔加什语翻译");
         list.add("文字输入框");
+        list.add("Html调试");
     }
 
     private void init() {
@@ -89,6 +90,8 @@ public class MainActivity extends BaseActivity {
                     startActivity(MalagasyTranslateActivity.class);
                 } else if (position == 15) {
                     startActivity(InputBoxActivity.class);
+                } else if (position == 16) {
+                    startActivity(HtmlActivity.class);
                 }
             }
         });
